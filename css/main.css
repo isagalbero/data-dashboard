@@ -1,3 +1,59 @@
-/*
- * Estilos de tu proyecto
- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.head-office {
+  font-family: 'Bitter', serif;
+  font-size: 20px;
+  list-style: none;
+  border: none;
+}
+
+.head-office li {
+  position: relative;
+  float: left;
+}
+
+.head-office li a {
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.head-office li a:hover {
+  background-color: #ffe521;
+}
+
+.head-office li ul {
+  position: absolute;
+  top: 25px;
+  display: none;
+}
+
+.head-office li:hover, .head-office li:hover ul {
+  display: block;
+}
+
+.head-office li ul li {
+  border: none;
+  width: 300px;
+}
+
+.menu {
+  display: flex;
+  font-family: 'Bitter', serif;
+  font-size: 20px;
+  list-style: none;
+}
+
+.menu li a {
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 10px;
+}
