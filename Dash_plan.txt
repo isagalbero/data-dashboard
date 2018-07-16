@@ -1,0 +1,6 @@
+Planejamento Dash Board
+
+- CRIAÇÃO DE LAYOUT DA PÁGINA (1 HORA);
+- IMPLEMENTAÇÃO COM HTML E CSS (1 DIA);
+- IMPLEMENTAÇÃO COM JS (1 DIA);
+- GRÁFICOS (1 DIA);
