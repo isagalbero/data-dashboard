@@ -1,6 +1,5 @@
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -77,4 +76,22 @@ nav {
   color: #000000;
   text-decoration: none;
   padding: 40px;
+}
+
+#navMenu {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#photoStudents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+#photoStudents img {
+  margin: 10px;
+  padding: 10px;
 }
