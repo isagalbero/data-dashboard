@@ -1,97 +1,144 @@
+/*
+Amarelo #ffe521
+Pink #ff009e
+Verde água #56f89a
+Preto #000000
+ */
+
 * {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
 }
 
 header {
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* background-color: #ffe521; */
-  height: 100px;
+  height: 80px;
 }
 
-.logo {
+img {
   width: 200px;
-  height: 100px;
-  /* float: left; */
 }
 
-nav {
-  font-family: 'Bitter', serif;
-  /* width: 100%; */
-  /* height: 50%; */
-  text-align: left;
+section {
+  background-color: #ecebeb;
 }
 
-.head-office {
-  margin: 20px 0 40px 40px;
-  text-transform: uppercase;
-  font-size: 20px;
-  background-color: transparent;
+.menu-dashboard {
+  padding: 2%;
 }
 
-.head-office li {
-  list-style: none;
-  position: relative;
+/* .menu-dashboard button:hover {
+  background-color: #D7D2D2;
+} */
+
+/* .content button.active {
+  background-color: #DFDDDD;
+} */
+
+#filter {
+  padding: 2%;
 }
 
-.head-office li a {
-  color: #000000;
-  text-decoration: none;
-  padding: 0 0 0 10px;
+select {
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: .25s;
 }
 
-.head-office li a:hover {
-  background-color: #ffe521;
+select:focus {
+  outline: none;
 }
 
-.head-office li ul {
-  background-color: #ffffff;
-  position: absolute;
+select:hover {
+  border: 1px solid #000000;
+}
+
+.tabContent {
   display: none;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  overflow: hidden;
 }
 
-.head-office li:hover, .head-office li:hover ul {
-  display: block;
+/* Estilos container */
+#container {
+  padding: 0 0 0 2%;
+  overflow: auto;
 }
 
-.head-office li ul li {
-  border: none;
-  width: 300px;
+#container h4 {
+  color: #262626;
+  font-weight: 200;
 }
 
-.general-menu {
-  text-transform: uppercase;
-  font-family: 'Bitter', serif;
-  font-size: 20px;
+#overview div {
+  float: left;
 }
 
-.menu {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-
-.menu li a {
-  color: #000000;
-  text-decoration: none;
-  padding: 40px;
-}
-
-#navMenu {
-  display: flex;
-  justify-content: center;
+#overview .info-container {
+  /* width: 31%; */
+  background-color: #fff;
+  box-shadow: 0px 5px 15px #b9b9b9;
+  float: left;
+  margin: 0 2% 2% 0;
+  padding: 15px;
   text-align: center;
+  color: #262626;
+  overflow: hidden;
 }
 
-#photoStudents {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-evenly;
+.info-container figure {
+  padding: 10px 0;
 }
 
-#photoStudents img {
-  margin: 10px;
-  padding: 10px;
+#overview .single {
+  width: 31%;
+}
+
+#overview .double {
+  width: 47.5%;
+}
+
+#overview .triple {
+  width: 97%;
+}
+
+#overview pre {
+  display: block;
+  font-size: 3em;
+  margin: 10px auto;
+  color: #ffc107;
+}
+
+#overview .info {
+  box-shadow: none;
+  width: 48%;
+  padding: 2%;
+  margin: 10px 0;
+}
+
+#overview .info.triple {
+  width: 100%;
+}
+
+#overview span {
+  display: block;
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+#overview .secondary {
+  font-size: .9em;
+  display: inline;
+}
+
+#overview h5 {
+  font-weight: 200;
+  margin-bottom: 5px;
 }

@@ -1,78 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Data Dashboard</title>
-    <link rel="stylesheet" href="css\main.css">
-    <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css\teste-data.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Open+Sans:400,600,700,800" rel="stylesheet">
   </head>
   <body>
-    <!-- User area -->
-    <header>
-      <img class='logoImage' src='assets/images/logo-laboratoria.svg' alt='Logo Laboratoria'>
 
+    <header>
+      <img src="assets\images\logo-laboratoria.svg" class="logo">
     </header>
 
-
-
-    <!-- Navigation from tabs -->
+    <!-- Filtro e menu -->
     <section>
-
+      <div id="filter">
+        <select id="head-office">
+          <option value="AQP">Arequipa</option>
+          <option value="CMDX">Cidade do México</option>
+          <option value="LIM">Lima</option>
+          <option value="SLC">Santiago do Chile</option>
+        </select>
+        <select id="class">
+          <option value="2016-2">2016 - II</option>
+          <option value="2017-1">2017 - I</option>
+          <option value="2017-2">2017 - II</option>
+        </select>
+        <select id="sprint">
+          <option value="1">Sprint I</option>
+          <option value="2">Sprint II</option>
+          <option value="3">Sprint III</option>
+          <option value="4">Sprint IV</option>
+        </select>
+      </div>
+      <div class="menu-dashboard">
+        <button class="menu" onclick="openPage(event, 'overview')" id="default">Visão Geral</button>
+        <button class="menu" onclick="openPage(event, 'students')" id="default">Estudantes</button>
+        <button class="menu" onclick="openPage(event, 'teachers')" id="default">Mentores</button>
+        <button class="menu" onclick="openPage(event, 'jedis')" id="default">Jedis</button>
+      </div>
     </section>
 
-    <!-- Cabeçalho -->
-    <!-- <header>
-      <div>
-        <img src="assets\images\logo-laboratoria.svg" class="logo">
+    <!-- Informações e Gráficos -->
+    <section>
+      <div id="overview" class="general-view" style="display: block;">
+        <div class="info-container">
+          <h1>Estudantes</h1>
+          <div>
+            <span id="current-students">" "</span>
+            <h2>Estudantes inscritas</h2>
+          </div>
+          <div>
+            <span id="withdrawals">" "</span>
+            <h2>% de desistentes</h2>
+          </div>
+        </div>
+
+        <div class="info-container">
+          <h1>Rendimento</h1>
+          <div>
+            <span id="overcome-average">" "</span>
+            <h2>Estudantes que atingeram a meta</h2>
+          </div>
+          <div>
+            <span id="overcome-percent">" "</span>
+            <h2>Do total de inscritas</h2>
+          </div>
+        </div>
+
+        <div class="info-container">
+          <h1>Progresso por sprint</h1>
+        </div>
+
+        <div class="info-container">
+          <div>
+            <h1>Estudantes que atingeram a meta de pontos técnicos</h1>
+            <div>
+              <span id="tech-target-average">" "</span>
+              <h2>"texto"</h2>
+            </div>
+            <div>
+              <span id="tech-target-sprint">" "</span>
+              <h2>"texto"</h2>
+            </div>
+          </div>
+          <div class="double graphic">
+            <figure><img src="assets/images/circle-graphic.png"></figure>
+          </div>
+        </div>
+
+        <div class="info-container">
+          <div>
+            <h1>Excederam a meta de pontos técnicos</h1>
+            <div>
+              <span id="hse-target-average">"número"</span>
+              <h2>"texto"</h2>
+            </div>
+            <div>
+              <span id="hse-target-sprint">"número"</span>
+              <h2>"texto"</h2>
+            </div>
+          </div>
+          <div class="graphic double">
+            <figure><img src="assets/images/circle-graphic.png"></figure>
+          </div>
+        </div>
+
+        <div class="info-container">
+          <h1>Estudantes satisfeitas com a experiência na Laboratoria</h1>
+          <div class="info">
+            <span id="satisfaction-percent">"número"</span>
+          </div>
+        </div>
+        <div class="info-container">
+          <h1>Pontuação média dos mentores</h1>
+          <div>
+            <span id="teachers-average">"número"</span>
+          </div>
+        </div>
+        <div class="info-container">
+          <h1>Pontuação média dos Jedis</h1>
+          <div>
+            <span id="jedi-average">"número"</span>
+          </div>
+        </div>
+
+        <div class="info-container triple">
+          <div>
+            <img src="assets/images/rectangular-graphic.png">
+          </div>
+          <div>
+          <h1>Net Promoter Score</h1>
+            <div>
+              <span id="nps">"número"</span>
+              <h2>NPS</h2>
+              <p>Promoters &emsp;<span class="secondary" id="promoters">83%</span></p>
+              <p>Passive &emsp;<span class="secondary" id="passive">10%</span></p>
+              <p>Detractors &emsp;<span class="secondary" id="detractors">8%</span></p>
+            </div>
+          </div>
+        </div>
+
+
       </div>
-    </header> -->
-
-    <!-- Navegação entre sedes -->
-    <!-- <nav>
-      <ul class="head-office">
-        <li><a href="#">Escolha uma sede</a>
-          <ul>
-            <li><a href="#">Arequipa 2016 - II</a></li>
-            <li><a href="#">Arequipa 2017 - I</a></li>
-            <li><a href="#">Cidade do México 2017 - I</a></li>
-            <li><a href="#">Cidade do México 2017 - II</a></li>
-            <li><a href="#">Lima 2016 - II</a></li>
-            <li><a href="#">Lima 2017 - I</a></li>
-            <li><a href="#">Lima 2017 - II</a></li>
-            <li><a href="#">Santiago do Chile 2016 - II</a></li>
-            <li><a href="#">Santiago do Chile 2017 - I</a></li>
-            <li><a href="#">Santiago do Chile 2017 - II</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav> -->
-
-    <!-- Menu geral -->
-    <div class="general-menu">
-      <ul class="menu">
-        <!-- <li><a href="#"></a></li> -->
-        <li><a href="#">Estudantes</a></li>
-        <li><a href="#">Mentores</a></li>
-        <li><a href="#">Jedis</a></li>
-      </ul>
-    </div>
-
-    <!-- Menu students -->
-    <div id='navMenu'>
-      <select name='' id='dropMenu'>
-
-      </select>
-    </div>
-
-    <div id='profileStudents'>
-      <div id='photoStudents'></div>
-      <div id='nameStudents'></div>
-    </div>
+    </section>
 
 
-		<!-- Base de datos -->
-		<script src="./js/data.js"></script>
-		<!-- Aquí va tus archivos JS -->
-    <script src="./js/app.js"></script>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/teste-data.js"></script>
   </body>
 </html>
