@@ -1,0 +1,53 @@
+1) O número total de alunas presentes pela sede e geração
+Arequipa [AQP]
+  2 turmas
+    2016-2: 4 sprints
+    2017-1: 3 sprints
+
+Cidade do México [CMDX]
+  2 turmas
+    2017-1: 3 sprints
+    2017-2: 2 sprints
+
+Lima [LIM]
+  3 turmas
+    2016-2: 2 sprints
+    2017-1: 4 sprints
+    2017-2: 2 sprints
+
+Santiago do Chile [SLC]
+  3 turmas
+    2016-2: 4 sprints
+    2017-1: 3 sprints
+    2017-2: 2 sprints
+
+2) A porcentagem de alunas desistentes
+
+3) O número de alunas que excedem a meta de pontos, em média, de todos os sprints realizados
+O objetivo dos pontos é 70% do total de pontos em HSE e em tecnologia
+
+4) A porcentagem que representa os dados anteriores em relação ao total de alunas
+O Net Promoter Score (NPS) média dos sprints realizados. O NPS é calculado com base no levantamento
+que as estudantes respondem em relação à recomendação que dariam da Laboratoria, sob a seguinte fórmula:
+
+[Promoters] = [Respostas 9 ou 10] / [Total respostas] * 100
+[Passive] = [Respostas 7 a 8] / [Total Respostas] * 100
+[Desistentes] = [Respostas entre 1 e 6] / [Total Respostas] * 100
+
+[NPS] = [Promoters] - [Desistentes]
+A quantidade e porcentagem que representa o total de alunas que excedem a meta de pontos técnicos em média e sprint
+
+5) O valor e a porcentagem que representam o número total de alunas que excedem a meta de pontos de HSE, em média, e por sprint
+
+6) O percentual de alunas satisfeitas com a experiência da Laboratoria
+
+7) A pontuação média das professoras
+
+8) A pontuação média das mestres Jedi
+
+Observações
+1800 máximo tech
+1200 máximo hse
+NPS e STUDENT está em porcentagem
+TEACHER e JEDI vai até 5.0
+Nem todas as turmas tem a mesma quantidade de sprints

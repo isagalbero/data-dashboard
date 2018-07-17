@@ -4,9 +4,9 @@ function start() {
   var filterHeadOffice = document.getElementById('head-office');
   var filterClass = document.getElementById('class');
   var filterSprint = document.getElementById('sprint');
-}
 
-filterHeadOffice.addEventListener('change', fillClass);
+
+filterHeadOffice.addEventListener('change', fillClass); // mudar nome funções
 filterClass.addEventListener('change', fillSprint);
 document.addEventListener ('change', infoOverview);
 document.addEventListener('change', infoSprint);
@@ -16,11 +16,11 @@ function fillClass(event) {
   for (var i = 0; i < Object.keys(data).length; i++) {
     if (event.target.value === Object.keys(data)[i]) {
       filterClass.innerHTML = '';
-      var classList = Object.keys(data[filterClass.value]).reverse();
+        var classList = Object.keys(data[filterHeadOffice.value]).reverse();
       console.log(classList);
       for (var j = 0; j < classList.length; j++) {
         var optionClass = document.createElement('option');
-        optionClass.value = promList[j];
+        optionClass.value = classList[j];
         optionClass.textContent = classList[j];
         filterClass.appendChild(optionClass);
       }
@@ -87,7 +87,7 @@ function infoOverview(event) {
       console.log(hseTargetAverage);
       // Exibir na visão geral
       document.getElementById('current-students').textContent = currentStudents;
-      document.getElementById('withdrawal').textContent = Math.round((withdrawalsStudents / students.length) * 100) * 10 / 10 + '%';
+      document.getElementById('withdrawals').textContent = Math.round((withdrawalsStudents / students.length) * 100) * 10 / 10 + '%';
       document.getElementById('overcome-average').textContent = overcomeStudents;
       document.getElementById('overcome-percent').textContent = Math.round((overcomeStudents / currentStudents) * 100) * 10 / 10 + '%';
       document.getElementById('tech-target-average').textContent = Math.round(techTargetAverage);
@@ -120,10 +120,10 @@ function infoOverview(event) {
     var techTarget = 0;
     var hseTarget = 0;
     for (var i = 0; i < students.length; i++) {
-      if (students[i].sprints[filterSprint.value - 1] !== undefined && students[i].sprints[selectSprint.value - 1].score.tech > 1260) {
+      if (students[i].sprints[filterSprint.value - 1] !== undefined && students[i].sprints[filterSprint.value - 1].score.tech > 1260) {
         techTarget++;
       }
-      if (students[i].sprints[filterSprint.value - 1] !== undefined && students[i].sprints[selectSprint.value - 1].score.hse > 840) {
+      if (students[i].sprints[filterSprint.value - 1] !== undefined && students[i].sprints[filterSprint.value - 1].score.hse > 840) {
         hseTarget++;
       }
     }
@@ -155,13 +155,14 @@ function drawChart() {
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
   chart.draw(data, options);
+  }
 };
 
   function openPage(evnt, opt) {
-  var i, tabContent, menu;
-  tabContent = document.getElementsByClassName('tabContent');
-  for (i = 0; i < tabContent.length; i++) {
-    tabContent[i].style.display = 'none';
+  var i, generalView, menu;
+  generalView = document.getElementsByClassName('general-view');
+  for (i = 0; i < generalView.length; i++) {
+    generalView[i].style.display = 'none';
   }
   menu = document.getElementsByClassName('menu');
   for (i = 0; i < menu.length; i++) {
