@@ -36,10 +36,10 @@
     </section>
     <section class="menu-dashboard">
       <div>
-        <button class="menu" onclick="openPage(event, 'overview')" id="default">Visão Geral</button>
-        <button class="menu" onclick="openPage(event, 'students')" id="default">Estudantes</button>
-        <button class="menu" onclick="openPage(event, 'teachers')" id="default">Mentores</button>
-        <button class="menu" onclick="openPage(event, 'jedis')" id="default">Jedis</button>
+        <button class="menu" onclick="openPage(event, 'overview')" id="main-menu">Visão Geral</button>
+        <button class="menu" onclick="openPage(event, 'students')" id="main-menu">Estudantes</button>
+        <button class="menu" onclick="openPage(event, 'teachers')" id="main-menu">Mentores</button>
+        <button class="menu" onclick="openPage(event, 'jedis')" id="main-menu">Jedis</button>
       </div>
     </section>
 
@@ -49,14 +49,14 @@
       <div class="overview-1">
 
         <div class="first-line-overview">
-          <h1>Enrollment</h1>
+          <h1>Estudantes inscritas</h1>
           <div>
             <span id="current-students"></span>
-            <p>Students currently enrolled</p>
+            <p>Estudantes matriculadas</p>
           </div>
           <div>
             <span id="withdrawals"></span>
-            <p>dropout</p>
+            <p>Desistências</p>
           </div>
           <div>
             <img src="assets\images\bar-graph.png">
@@ -64,14 +64,14 @@
         </div>
 
         <div class="first-line-overview">
-          <h1>Achievement</h1>
+          <h1>Conquistas</h1>
           <div>
             <span id="overcome-average"></span>
-            <p>Students that meet the target</p>
+            <p>Estudantes que atingiram a meta</p>
           </div>
           <div>
             <span id="overcome-percent"></span>
-            <p>of total</p>
+            <p>do total</p>
           </div>
           <div>
             <img src="assets\images\graph.png">
@@ -83,10 +83,10 @@
           <h1>Net Promoter Score</h1>
             <div>
               <span id="nps"></span>
-              <p>Cumulative NPS</p>
-              <p>Promoters<span class="secondary" id="promoters"></span></p>
-              <p>Passive<span class="secondary" id="passive"></span></p>
-              <p>Detractors<span class="secondary" id="detractors"></span></p>
+              <p>NPS</p>
+              <p>Promoters<span class="info-nps" id="promoters"></span></p>
+              <p>Passive<span class="info-nps" id="passive"></span></p>
+              <p>Detractors<span class="info-nps" id="detractors"></span></p>
             </div>
           </div>
           <div>
@@ -100,14 +100,14 @@
 
         <div class="second-line-overview">
           <div>
-            <h1>Tech Skills</h1>
+            <h1>Habilidades técnicas</h1>
             <div>
-              <span id="tech-target-average"></span>
-              <p>Students that meet the target</p>
+              <span id="tech-note-average"></span>
+              <p>Estudantes que atingiram a nota tech</p>
             </div>
             <div>
-              <span id="tech-target-sprint"></span>
-              <p>of total</p>
+              <span id="tech-note-sprint"></span>
+              <p>do total</p>
             </div>
           </div>
           <div>
@@ -122,14 +122,14 @@
 
         <div class="third-line-overview">
           <div>
-            <h1>Life Skills</h1>
+            <h1>Habilidades sociemocionais</h1>
             <div>
-              <span id="hse-target-average"></span>
-              <p>Overall class average</p>
+              <span id="hse-note-average"></span>
+              <p>Média geral da turma</p>
             </div>
             <div>
-              <span id="hse-target-sprint"></span>
-              <p>Of studentes that meet the target</p>
+              <span id="hse-note-sprint"></span>
+              <p>de estudantes que atingiram a meta</p>
             </div>
           </div>
           <div>
@@ -143,10 +143,10 @@
       <div class="overview-4">
 
         <div class="fourth-line-overview">
-          <h1>Student satisfaction</h1>
+          <h1>Satisfação das estudantes</h1>
           <div>
             <span id="satisfaction-percent"></span>
-            <p>meeting or exceeding expectations</p>
+            <p>Atendendo ou superando as expectativas</p>
           </div>
           <div>
             <img src="assets\images\graph.png">
@@ -154,10 +154,10 @@
         </div>
 
         <div class="fourth-line-overview">
-          <h1>Teacher ranking</h1>
+          <h1>Nota dos Mentores</h1>
           <div>
             <span id="teachers-average"></span>
-            <p>Overall teacher rating</p>
+            <p>Classificação geral do mentores</p>
           </div>
           <div>
             <img src="assets\images\graph.png">
@@ -165,10 +165,10 @@
         </div>
 
         <div class="fourth-line-overview">
-          <h1>Jedi master rating</h1>
+          <h1>Nota dos Jedis</h1>
           <div>
             <span id="jedi-average"></span>
-            <p>Overall jedi rating</p>
+            <p>Classificação geral dos jedis</p>
           </div>
           <div>
             <img src="assets\images\graph.png">

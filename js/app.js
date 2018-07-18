@@ -47,8 +47,8 @@ function infoGeneralView(event) {
       var currentStudents = 0;
       var withdrawalsStudents = 0;
       var overcomeStudents = 0;
-      var techTarget = 0; // nota máxima 1260
-      var hseTarget = 0; // nota máxima 840
+      var techNote = 0; // nota máxima 1260
+      var hseNote = 0; // nota máxima 840
 
       // Estudantes ativas e desistentes
       for (var i = 0; i < students.length; i++) {
@@ -62,11 +62,11 @@ function infoGeneralView(event) {
           for (var j = 0; j < sprints; j++) {
             techSum += students[i].sprints[j].score.tech;
             if (students[i].sprints[j].score.tech > 1260) {
-              techTarget++;
+              techNote++;
             }
             hseSum += students[i].sprints[j].score.hse;
             if (students[i].sprints[j].score.hse > 840) {
-              hseTarget++;
+              hseNote++;
             }
           }
           var techAverage = Math.floor(techSum / sprints);
@@ -82,18 +82,18 @@ function infoGeneralView(event) {
         withdrawalsStudents++;
       }
     }
-    var techTargetAverage = techTarget / sprints;
-      console.log(techTargetAverage);
-      var hseTargetAverage = hseTarget / sprints;
-      console.log(hseTargetAverage);
+    var techNoteAverage = techNote / sprints;
+      console.log(techNoteAverage);
+      var hseNoteAverage = hseNote / sprints;
+      console.log(hseNoteAverage);
 
       // Exibir na visão geral
       document.getElementById('current-students').textContent = currentStudents;
       document.getElementById('withdrawals').textContent = Math.round((withdrawalsStudents / students.length) * 100) * 10 / 10 + '%';
       document.getElementById('overcome-average').textContent = overcomeStudents;
       document.getElementById('overcome-percent').textContent = Math.round((overcomeStudents / currentStudents) * 100) * 10 / 10 + '%';
-      document.getElementById('tech-target-average').textContent = Math.round(techTargetAverage);
-      document.getElementById('hse-target-average').textContent = Math.round(hseTargetAverage);
+      document.getElementById('tech-note-average').textContent = Math.round(techNoteAverage);
+      document.getElementById('hse-note-average').textContent = Math.round(hseNoteAverage);
 
       // Média NPS
       var ratings = data[filterHeadOffice.value][filterClass.value].ratings;
@@ -120,24 +120,24 @@ function infoGeneralView(event) {
     var students = data[filterHeadOffice.value][filterClass.value].students;
 
     // Estudantes que superaram os 70%
-    var techTarget = 0;
-    var hseTarget = 0;
+    var techNote = 0;
+    var hseNote = 0;
     for (var i = 0; i < students.length; i++) {
-      if (students[i].sprints[filterSprint.value - 1] !== undefined && students[i].sprints[filterSprint.value - 1].score.tech > 1260) {
-        techTarget++;
+      if (students[i].sprints[filterSprint.value] !== undefined && students[i].sprints[filterSprint.value].score.tech > 1260) {
+        techNote++;
       }
-      if (students[i].sprints[filterSprint.value - 1] !== undefined && students[i].sprints[filterSprint.value - 1].score.hse > 840) {
-        hseTarget++;
+      if (students[i].sprints[filterSprint.value] !== undefined && students[i].sprints[filterSprint.value].score.hse > 840) {
+        hseNote++;
       }
     }
-    document.getElementById('tech-target-sprint').textContent = techTarget;
-    document.getElementById('hse-target-sprint').textContent = hseTarget;
+    document.getElementById('tech-note-sprint').textContent = techNote;
+    document.getElementById('hse-note-sprint').textContent = hseNote;
 
     // Estudantes satisfeitas com a experiência na laboratoria
     var ratings = data[filterHeadOffice.value][filterClass.value].ratings;
-    document.getElementById('teachers-average').textContent = ratings[filterSprint.value - 1].teacher;
-    document.getElementById('jedi-average').textContent = ratings[filterSprint.value - 1].jedi;
-    var reachExp = ratings[filterSprint.value - 1].student.cumple + ratings[filterSprint.value - 1].student.supera;
+    document.getElementById('teachers-average').textContent = ratings[filterSprint.value].teacher;
+    document.getElementById('jedi-average').textContent = ratings[filterSprint.value].jedi;
+    var reachExp = ratings[filterSprint.value].student.cumple + ratings[filterSprint.value].student.supera;
     document.getElementById('satisfaction-percent').textContent = reachExp + '%';
   }
 
