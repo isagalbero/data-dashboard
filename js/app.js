@@ -146,3 +146,69 @@ function infoGeneralView(event) {
 };
 
 // Função para abrir dados estudantes, mentores, jedis aqui
+
+var callStudents = document.querySelector('#photoName');
+
+function showStudents(){
+ for (i in data['SCL'][turma]['students']){
+   var img = document.createElement('img');
+   img.src = data['SCL'][turma]['students'][i]['photo'];
+   var newDiv = document.createElement('div');
+   var nameStudents = data['SCL'][turma]['students'][i]['name'];
+   var paragraph = document.createElement('p');
+   paragraph.innerHTML = nameStudents;
+   callStudents.appendChild(newDiv);
+   newDiv.appendChild(img);
+   newDiv.appendChild(paragraph);
+   newDiv.setAttribute('class', 'newDiv');
+   img.height = 100;
+   img.width = 100;
+ }
+
+ for (i in data['LIM'][turma]['students']){
+   var img = document.createElement('img');
+   img.src = data['LIM'][turma]['students'][i]['photo'];
+   var newDiv = document.createElement('div');
+   var nameStudents = data['LIM'][turma]['students'][i]['name'];
+   var paragraph = document.createElement('p');
+   paragraph.innerHTML = nameStudents;
+   callStudents.appendChild(newDiv);
+   newDiv.appendChild(img);
+   newDiv.appendChild(paragraph);
+   newDiv.setAttribute('class', 'newDiv');
+   img.height = 100;
+   img.width = 100;
+ }
+
+ for (i in data['CDMX'][turma]['students']){
+   var img = document.createElement('img');
+   img.src = data['CDMX'][turma]['students'][i]['photo'];
+   var newDiv = document.createElement('div');
+   var nameStudents = data['CDMX'][turma]['students'][i]['name'];
+   var paragraph = document.createElement('p');
+   paragraph.innerHTML = nameStudents;
+   callStudents.appendChild(newDiv);
+   newDiv.appendChild(img);
+   newDiv.appendChild(paragraph);
+   newDiv.setAttribute('class', 'newDiv');
+   img.height = 100;
+   img.width = 100;
+ }
+
+ for (i in data['AQP'][turma]['students']){
+   var img = document.createElement('img');
+   img.src = data['AQP'][turma]['students'][i]['photo'];
+   var newDiv = document.createElement('div');
+   var nameStudents = data['AQP'][turma]['students'][i]['name'];
+   var paragraph = document.createElement('p');
+   paragraph.innerHTML = nameStudents;
+   callStudents.appendChild(newDiv);
+   newDiv.appendChild(img);
+   newDiv.appendChild(paragraph);
+   newDiv.setAttribute('class', 'newDiv');
+   img.height = 100;
+   img.width = 100;
+ }
+}
+
+callStudents.addEventListener('click', showStudents);
