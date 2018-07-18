@@ -17,7 +17,7 @@ function chooseClass(event) {
     if (event.target.value === Object.keys(data)[i]) {
       filterClass.innerHTML = '';
         var classList = Object.keys(data[filterHeadOffice.value]).reverse();
-      // console.log(classList);
+      console.log(classList);
       for (var j = 0; j < classList.length; j++) {
         var optionClass = document.createElement('option');
         optionClass.value = classList[j];
@@ -86,6 +86,7 @@ function infoGeneralView(event) {
       console.log(techTargetAverage);
       var hseTargetAverage = hseTarget / sprints;
       console.log(hseTargetAverage);
+
       // Exibir na visão geral
       document.getElementById('current-students').textContent = currentStudents;
       document.getElementById('withdrawals').textContent = Math.round((withdrawalsStudents / students.length) * 100) * 10 / 10 + '%';
@@ -97,26 +98,27 @@ function infoGeneralView(event) {
       // Média NPS
       var ratings = data[filterHeadOffice.value][filterClass.value].ratings;
       var sumNps = 0;
-      var sumProm = 0;
-      var sumPass = 0;
-      var sumDet = 0;
+      var sumPromoters = 0;
+      var sumPassive = 0;
+      var sumDetractors = 0;
       for (var i = 0; i < sprints; i++) {
-        sumProm += ratings[i].nps.promoters;
-        sumPass += ratings[i].nps.passive;
-        sumDet += ratings[i].nps.detractors;
+        sumPromoters += ratings[i].nps.promoters;
+        sumPassive += ratings[i].nps.passive;
+        sumDetractors += ratings[i].nps.detractors;
         sumNps += ratings[i].nps.promoters - ratings[i].nps.detractors;
       }
 
       // Exibir em visão geral
-      document.getElementById('promoters').textContent = Math.round(sumProm / sprints) + '%';
-      document.getElementById('passive').textContent = Math.round(sumPass / sprints) + '%';
-      document.getElementById('detractors').textContent = Math.round(sumDet / sprints) + '%';
+      document.getElementById('promoters').textContent = Math.round(sumPromoters / sprints) + '%';
+      document.getElementById('passive').textContent = Math.round(sumPassive / sprints) + '%';
+      document.getElementById('detractors').textContent = Math.round(sumDetractors / sprints) + '%';
       document.getElementById('nps').textContent = sumNps / sprints + '%';
     }
   }
 
   function infoSprint(event) {
     var students = data[filterHeadOffice.value][filterClass.value].students;
+
     // Estudantes que superaram os 70%
     var techTarget = 0;
     var hseTarget = 0;
@@ -130,6 +132,7 @@ function infoGeneralView(event) {
     }
     document.getElementById('tech-target-sprint').textContent = techTarget;
     document.getElementById('hse-target-sprint').textContent = hseTarget;
+
     // Estudantes satisfeitas com a experiência na laboratoria
     var ratings = data[filterHeadOffice.value][filterClass.value].ratings;
     document.getElementById('teachers-average').textContent = ratings[filterSprint.value - 1].teacher;
@@ -138,38 +141,8 @@ function infoGeneralView(event) {
     document.getElementById('satisfaction-percent').textContent = reachExp + '%';
   }
 
+// Gráficos aqui
 
-// Gráficos
-var sede1 = data['AQP']['2017-1']['students'].length;
-var sede2 = data['AQP']['2016-2']['students'].length;
-google.charts.load('current', { 'packages': ['corechart'] });
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-    ['Generacion', 'Porcentaje'],
-    ['2017', sede1],
-    ['2016', sede2]]);
-
-  var options = { title: 'Alumnas' };
-
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-  chart.draw(data, options);
-  }
 };
 
-  function openPage(evnt, opt) {
-  var i, generalView, menu;
-  generalView = document.getElementsByClassName('general-view');
-  for (i = 0; i < generalView.length; i++) {
-    generalView[i].style.display = 'none';
-  }
-  menu = document.getElementsByClassName('menu');
-  for (i = 0; i < menu.length; i++) {
-    menu[i].className = menu[i].className.replace('active', '');
-  }
-  document.getElementById(opt).style.display = 'block';
-  evnt.currentTarget.className += 'active';
-}
-document.getElementById('default').click();
+// Função para abrir dados estudantes, mentores, jedis aqui
