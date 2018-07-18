@@ -1,0 +1,7 @@
+Planejamento DashBoard
+
+- Desenho layout da página (1 hora)
+- Implementar HTML e CSS (1 dia)
+- Implementar JS (1 dia)
+- Gráficos (1 dia)
+- Finalizar, detalhes (1 dia)
