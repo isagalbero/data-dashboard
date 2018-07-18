@@ -6,18 +6,18 @@ function start() {
   var filterSprint = document.getElementById('sprint');
 
 
-filterHeadOffice.addEventListener('change', fillClass); // mudar nome funções
-filterClass.addEventListener('change', fillSprint);
-document.addEventListener ('change', infoOverview);
+filterHeadOffice.addEventListener('change', chooseClass);
+filterClass.addEventListener('change', chooseSprint);
+document.addEventListener ('change', infoGeneralView);
 document.addEventListener('change', infoSprint);
 
 // Turmas
-function fillClass(event) {
+function chooseClass(event) {
   for (var i = 0; i < Object.keys(data).length; i++) {
     if (event.target.value === Object.keys(data)[i]) {
       filterClass.innerHTML = '';
         var classList = Object.keys(data[filterHeadOffice.value]).reverse();
-      console.log(classList);
+      // console.log(classList);
       for (var j = 0; j < classList.length; j++) {
         var optionClass = document.createElement('option');
         optionClass.value = classList[j];
@@ -29,7 +29,7 @@ function fillClass(event) {
 }
 
 // Sprints
-function fillSprint(event) {
+function chooseSprint(event) {
   var sprints = data[filterHeadOffice.value][filterClass.value].ratings.length;
   filterSprint.innerHTML = '';
   for (var i = sprints; 0 < i; i--) {
@@ -40,7 +40,7 @@ function fillSprint(event) {
   }
 }
 
-function infoOverview(event) {
+function infoGeneralView(event) {
     if (event.target === filterHeadOffice || event.target === filterClass) {
       var students = data[filterHeadOffice.value][filterClass.value].students;
       var sprints = data[filterHeadOffice.value][filterClass.value].ratings.length;
@@ -73,6 +73,7 @@ function infoOverview(event) {
           console.log(techAverage);
           var hseAverage = Math.floor(hseSum / sprints);
           console.log(hseAverage);
+
           // Estudantes que superaram a meta geral
           if (techAverage > 1260 && hseAverage > 840) {
             overcomeStudents++;

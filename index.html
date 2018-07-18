@@ -13,7 +13,7 @@
     </header>
 
     <!-- Filtro e menu -->
-    <section>
+    <section class="menu-filter">
       <div id="filter">
         <select id="head-office">
           <option value="AQP">Arequipa</option>
@@ -33,7 +33,9 @@
           <option value="4">Sprint IV</option>
         </select>
       </div>
-      <div class="menu-dashboard">
+    </section>
+    <section class="menu-dashboard">
+      <div>
         <button class="menu" onclick="openPage(event, 'overview')" id="default">Visão Geral</button>
         <button class="menu" onclick="openPage(event, 'students')" id="default">Estudantes</button>
         <button class="menu" onclick="openPage(event, 'teachers')" id="default">Mentores</button>
@@ -42,110 +44,140 @@
     </section>
 
     <!-- Informações e Gráficos -->
-    <section>
-      <div id="overview" class="general-view" style="display: block;">
-        <div class="info-container">
-          <h1>Estudantes</h1>
+    <section id="infos" class="general-view">
+
+      <div class="overview-1">
+
+        <div class="first-line-overview">
+          <h1>Enrollment</h1>
           <div>
-            <span id="current-students">" "</span>
-            <h2>Estudantes inscritas</h2>
+            <span id="current-students"></span>
+            <p>Students currently enrolled</p>
           </div>
           <div>
-            <span id="withdrawals">" "</span>
-            <h2>% de desistentes</h2>
+            <span id="withdrawals"></span>
+            <p>dropout</p>
+          </div>
+          <div>
+            <img src="assets\images\bar-graph.png">
           </div>
         </div>
 
-        <div class="info-container">
-          <h1>Rendimento</h1>
+        <div class="first-line-overview">
+          <h1>Achievement</h1>
           <div>
-            <span id="overcome-average">" "</span>
-            <h2>Estudantes que atingeram a meta</h2>
+            <span id="overcome-average"></span>
+            <p>Students that meet the target</p>
           </div>
           <div>
-            <span id="overcome-percent">" "</span>
-            <h2>Do total de inscritas</h2>
+            <span id="overcome-percent"></span>
+            <p>of total</p>
+          </div>
+          <div>
+            <img src="assets\images\graph.png">
           </div>
         </div>
 
-        <div class="info-container">
-          <h1>Progresso por sprint</h1>
-        </div>
-
-        <div class="info-container">
-          <div>
-            <h1>Estudantes que atingeram a meta de pontos técnicos</h1>
-            <div>
-              <span id="tech-target-average">" "</span>
-              <h2>"texto"</h2>
-            </div>
-            <div>
-              <span id="tech-target-sprint">" "</span>
-              <h2>"texto"</h2>
-            </div>
-          </div>
-          <div class="double graphic">
-            <figure><img src="assets/images/circle-graphic.png"></figure>
-          </div>
-        </div>
-
-        <div class="info-container">
-          <div>
-            <h1>Excederam a meta de pontos técnicos</h1>
-            <div>
-              <span id="hse-target-average">"número"</span>
-              <h2>"texto"</h2>
-            </div>
-            <div>
-              <span id="hse-target-sprint">"número"</span>
-              <h2>"texto"</h2>
-            </div>
-          </div>
-          <div class="graphic double">
-            <figure><img src="assets/images/circle-graphic.png"></figure>
-          </div>
-        </div>
-
-        <div class="info-container">
-          <h1>Estudantes satisfeitas com a experiência na Laboratoria</h1>
-          <div class="info">
-            <span id="satisfaction-percent">"número"</span>
-          </div>
-        </div>
-        <div class="info-container">
-          <h1>Pontuação média dos mentores</h1>
-          <div>
-            <span id="teachers-average">"número"</span>
-          </div>
-        </div>
-        <div class="info-container">
-          <h1>Pontuação média dos Jedis</h1>
-          <div>
-            <span id="jedi-average">"número"</span>
-          </div>
-        </div>
-
-        <div class="info-container triple">
-          <div>
-            <img src="assets/images/rectangular-graphic.png">
-          </div>
+        <div class="first-line-overview">
           <div>
           <h1>Net Promoter Score</h1>
             <div>
-              <span id="nps">"número"</span>
-              <h2>NPS</h2>
-              <p>Promoters &emsp;<span class="secondary" id="promoters">83%</span></p>
-              <p>Passive &emsp;<span class="secondary" id="passive">10%</span></p>
-              <p>Detractors &emsp;<span class="secondary" id="detractors">8%</span></p>
+              <span id="nps"></span>
+              <p>Cumulative NPS</p>
+              <p>Promoters<span class="secondary" id="promoters"></span></p>
+              <p>Passive<span class="secondary" id="passive"></span></p>
+              <p>Detractors<span class="secondary" id="detractors"></span></p>
             </div>
+          </div>
+          <div>
+            <img src="assets\images\graph.png">
           </div>
         </div>
 
+      </div>
+
+      <div class="overview-2">
+
+        <div class="second-line-overview">
+          <div>
+            <h1>Tech Skills</h1>
+            <div>
+              <span id="tech-target-average"></span>
+              <p>Students that meet the target</p>
+            </div>
+            <div>
+              <span id="tech-target-sprint"></span>
+              <p>of total</p>
+            </div>
+          </div>
+          <div>
+            <img src="assets\images\rectangular-graphic.png">
+            <img src="assets\images\circle-graphic.png">
+          </div>
+        </div>
 
       </div>
+
+      <div class="overview-3">
+
+        <div class="third-line-overview">
+          <div>
+            <h1>Life Skills</h1>
+            <div>
+              <span id="hse-target-average"></span>
+              <p>Overall class average</p>
+            </div>
+            <div>
+              <span id="hse-target-sprint"></span>
+              <p>Of studentes that meet the target</p>
+            </div>
+          </div>
+          <div>
+            <img src="assets\images\rectangular-graphic.png">
+            <img src="assets\images\circle-graphic.png">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="overview-4">
+
+        <div class="fourth-line-overview">
+          <h1>Student satisfaction</h1>
+          <div>
+            <span id="satisfaction-percent"></span>
+            <p>meeting or exceeding expectations</p>
+          </div>
+          <div>
+            <img src="assets\images\graph.png">
+          </div>
+        </div>
+
+        <div class="fourth-line-overview">
+          <h1>Teacher ranking</h1>
+          <div>
+            <span id="teachers-average"></span>
+            <p>Overall teacher rating</p>
+          </div>
+          <div>
+            <img src="assets\images\graph.png">
+          </div>
+        </div>
+
+        <div class="fourth-line-overview">
+          <h1>Jedi master rating</h1>
+          <div>
+            <span id="jedi-average"></span>
+            <p>Overall jedi rating</p>
+          </div>
+          <div>
+            <img src="assets\images\graph.png">
+          </div>
+        </div>
+
+      </div>
+
     </section>
-
-
 
     <script src="./js/data.js"></script>
     <script src="./js/app.js"></script>
